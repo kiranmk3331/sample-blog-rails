@@ -1,9 +1,11 @@
-<h1>Articles</h1>
+<h1 class="header">Articles</h1>
 
-<ul>
+<button class="button is-primary" style="margin-left: 5rem;">
+  <%= link_to "New Article", new_article_path %>
+</button>
+
+<ul class="container">
   <% @articles.each do |article| %>
-  <li><%= link_to article.title, article %></li>
+  <li class="list-post"><%= link_to article.title, article %></li>
   <% end %>
 </ul>
-
-<%= link_to "New Article", new_article_path %>

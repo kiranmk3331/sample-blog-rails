@@ -1,19 +1,18 @@
 <%= form_with model: article do |form| %>
 <div>
-  <%= form.label :title %><br />
-  <%= form.text_field :title %><br />
+  <span class="title is-4"><%= form.label :title %><br /></span>
+  <span class="title is-2"><%= form.text_field :title %><br /></span>
   <% article.errors.full_messages_for(:title).each do |message| %>
   <div><%= message %></div>
   <% end %>
 </div>
 
 <div>
-  <%= form.label :body %><br />
-  <%= form.text_area :body %><br />
+  <span class="title is-4"> <%= form.label :body %><br /></span>
+  <span style="margin-top: 3rem"><%= form.text_area :body %><br /></span>
   <% article.errors.full_messages_for(:body).each do |message| %>
   <div><%= message %></div>
   <% end %>
 </div>
 
-<div><%= form.submit %></div>
-<% end %>
+<%=form.submit%> <% end %>

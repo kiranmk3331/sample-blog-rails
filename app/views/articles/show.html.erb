@@ -1,17 +1,22 @@
-<h1><%= @article.title %></h1>
+<h1 class="header title"><%= @article.title %></h1>
+<div class="container">
+  <h1 class="subtitle"><%= @article.body %></h1>
 
-<p><%= @article.body %></p>
+  <ul class="is-flex">
+    <button class="button is-warning" style="gap: 1rem;">
+      <li><%= link_to "Edit", edit_article_path(@article) %></li>
+    </button>
+     <button class="button is-warning">
+    <li>
+      <%= link_to "Destroy", article_path(@article), method: :delete, data: {
+      confirm: "Are you sure?" } %>
+    </li>
+    </button>
+  </ul>
 
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li>
-    <%= link_to "Destroy", article_path(@article), method: :delete, data: {
-    confirm: "Are you sure?" } %>
-  </li>
-</ul>
+  <h2 class="subtitle">Comments</h2>
+  <%= render @article.comments %>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+  <h2 class="subtitle">Add a comment:</h2>
+  <%= render 'comments/form' %>
+</div>

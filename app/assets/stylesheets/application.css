@@ -10,6 +10,59 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require main 
  *= require_self
  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+}
+
+.header {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vh;
+  min-height: 70vh;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 1rem;
+}
+
+.list-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  list-style-type: none;
+  width: 30rem;
+  height: 8rem;
+  padding: 1rem;
+}
+
+.list-post small {
+  align-self: end;
+}
+
+.list-post:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.primary {
+  background: red;
+}
